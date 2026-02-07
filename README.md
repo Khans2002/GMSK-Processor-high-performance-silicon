@@ -1,6 +1,13 @@
 # GMSK-V1: High Performance Silicon (Open Source Integration)
+**GMSK** (**G**raph **M**atrix **S**calar **K**ernel)
 
 **GMSK-V1** is the production-grade phase of the Sameer AI Silicon Initiative. Unlike the prototype (P1), this project simulates a commercial-grade System-on-Chip (SoC) by integrating the industrial **CV32E40P RISC-V Core** (formerly RI5CY) from the OpenHW Group.
+
+## 🧬 The GMSK Ideology
+*   **G**raph: Optimized for Neural Network Graphs (AI).
+*   **M**atrix: Hardware acceleration for Tensor operations.
+*   **S**calar: Efficient general-purpose computing (RISC-V).
+*   **K**ernel: The central silicon brain of Sameer OS.
 
 ## 🎯 Objective
 To build a robust, OS-capable processor by combining verified open-source cores with custom AI accelerators designed for **Sameer OS**.
