@@ -1,6 +1,8 @@
 # GMSK-V1: High Performance Silicon (Open Source Integration)
 **GMSK** (**G**raph **M**atrix **S**calar **K**ernel)
 
+*Inspiration:* The name GMSK is derived from the architect's name, **Gooty Mohammed Sameer Khan**, reflecting the personal vision behind this high-performance silicon.
+
 **GMSK-V1** is the production-grade phase of the Sameer AI Silicon Initiative. Unlike the prototype (P1), this project simulates a commercial-grade System-on-Chip (SoC) by integrating the industrial **CV32E40P RISC-V Core** (formerly RI5CY) from the OpenHW Group.
 
 ## 🧬 The GMSK Ideology
