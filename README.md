@@ -1,23 +1,69 @@
-# GMSK-V1: High Performance Silicon (Open Source Integration)
-**GMSK** (**G**raph **M**atrix **S**calar **K**ernel)
+# GMSK-V1: High Performance Silicon
+![Status](https://img.shields.io/badge/Status-Phase%202%20Complete-success)
+![RTL](https://img.shields.io/badge/RTL-SystemVerilog-blue)
+![Core](https://img.shields.io/badge/Core-CV32E40P-orange)
 
-*Inspiration:* The name GMSK is derived from the architect's name, **Gooty Mohammed Sameer Khan**, reflecting the personal vision behind this high-performance silicon.
+**GMSK** (**G**raph **M**atrix **S**calar **K**ernel) is a high-performance RISC-V SoC initiative architected by **Gooty Mohammed Sameer Khan**. This project integrates industrial-grade open-source cores with custom AI acceleration logic designed for next-generation computing.
 
-**GMSK-V1** is the production-grade phase of the Sameer AI Silicon Initiative. Unlike the prototype (P1), this project simulates a commercial-grade System-on-Chip (SoC) by integrating the industrial **CV32E40P RISC-V Core** (formerly RI5CY) from the OpenHW Group.
-
-## 🧬 The GMSK Ideology
-*   **G**raph: Optimized for Neural Network Graphs (AI).
-*   **M**atrix: Hardware acceleration for Tensor operations.
+## 🧬 The Ideology
+The GMSK architecture is built on four pillars:
+*   **G**raph: Optimized for Neural Network computational graphs.
+*   **M**atrix: Hardware acceleration for dense Tensor operations.
 *   **S**calar: Efficient general-purpose computing (RISC-V).
 *   **K**ernel: The central silicon brain of Sameer OS.
 
-## 🎯 Objective
-To build a robust, OS-capable processor by combining verified open-source cores with custom AI accelerators designed for **Sameer OS**.
+## 🏗️ Technical Architecture
+**GMSK-V1** is the production-grade implementation, integrating the **CV32E40P** (formerly RI5CY) from the OpenHW Group.
 
-## 🏗️ Architecture
-*   **Core:** CV32E40P (32-bit RISC-V, 4-stage pipeline).
-*   **Bus:** AMBA APB/AXI (Planned).
-*   **Extensions:** Custom AI Accelerators (Sameer AI Neural Engine).
+*   **Core**: CV32E40P (32-bit RISC-V, 4-stage pipeline).
+*   **ISA**: RV32IMFC (Integer, Multiply, Float, Compressed).
+*   **Verified**: 100% compatible with Icarus Verilog simulation.
+*   **Memory**: Custom single-cycle instruction memory (ROM).
 
-## 🚀 Status
-*   **Base Core:** Integrating CV32E40P...
+## 🚀 Simulation Status
+We have successfully integrated the core and verified it via **RTL Simulation**.
+
+### Phase 2: Assembly Execution (Completed)
+The core has successfully executed **hand-assembled machine code** without a compiler toolchain.
+- **Test Program**: `10 + 20 = 30`
+- **Result**: Confirmed via Register File inspection (`x3` = `0x1E`).
+
+## 🛠️ How to Run
+### Prerequisites
+- **Icarus Verilog** (`iverilog`)
+- **GTKWave** (Optional, for waveform viewing)
+
+### Quick Start
+1.  **Clone the Repository**:
+    ```bash
+    git clone https://github.com/your-username/GMSK-V1.git
+    cd GMSK-V1
+    ```
+
+2.  **Run Simulation**:
+    ```bash
+    make sim
+    ```
+    *Output should show the core fetching instructions and registers updating.*
+
+3.  **View Waveforms**:
+    ```bash
+    make wave
+    ```
+
+## 📂 Project Structure
+```text
+.
+├── src/
+│   ├── gmsk_v1_soc.v      # Top-level SoC Wrapper
+│   ├── program_memory.v   # Instruction RAM (ROM)
+│   ├── program.hex        # Machine Code
+│   └── cv32e40p/          # Core RTL
+├── tests/
+│   └── gmsk_v1_tb.v       # SystemVerilog Testbench
+└── Makefile               # Build System
+```
+
+## 📜 License
+This project utilizes the CV32E40P core (Solderpad/Apache 2.0).
+GMSK Architecture © 2026 Gooty Mohammed Sameer Khan.
